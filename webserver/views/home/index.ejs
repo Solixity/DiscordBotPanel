@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord Bot Panel</title>
+
+    <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body style="padding: 10px;">
+    <header>
+        <i class="text-muted">Process Version: <%= _process.version %></i>
+        <div class="text-muted">Panel Version: v<%= package.version %></div>
+        <div class="text-muted">First time running? <a href="//">Click here</a>.</div>
+        <h3>Discord Bot Panel</h3>
+    </header>
+
+    <main style="margin-top: 18%;">
+        <div class="container">
+            <h5>Select the folder that contains <kbd>DBP.js</kbd>.</h5>
+            <h6>The <kbd>DBP.js</kbd> should have a exported client and node process.</h6>
+            <form action="/access" method="post" id="form" enctype="multipart/form-data">
+                <div class="form-group">
+                    <input type="file" name="folder" id="folder" class="form-control">
+                    <label for="folder" id="label"></label>
+                </div>
+                <input type="hidden" name="location" id="location">
+            </form>
+        </div>
+    </main>
+
+    <script>
+        const selection = document.getElementById("folder");
+
+        selection.onchange = function(e) {
+            document.getElementById("location").value = e.target.files[0].path;
+            document.getElementById("form").submit();
+        }
+    </script>
+</body>
+</html>

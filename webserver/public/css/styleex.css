@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap');
+@import url('/css/bootstrap.min.css');
+
+* {
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+}
+
+body {
+    background-color: #202225;
+}
+
+a {
+    text-decoration: none;
+}
+
+.card {
+    background-color: #2C2F33;
+}

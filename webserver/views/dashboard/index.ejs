@@ -1,0 +1,104 @@
+<% const client = exp.Client; %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord Bot Panel</title>
+
+    <link rel="stylesheet" href="/css/styleex.css" />
+</head>
+<body>
+    <header>
+        <div class="container-fluid pt-4">
+            <h5><img src="<%= client.user.displayAvatarURL({ dynamic: true }) %>" width="64" style="border-radius: 5px; border: 0.3px solid white; float: left; margin-right: 10px;" class="shadow" /> <%= client.user.tag %></h5>
+            <h6><%= client.user.id %></h6>
+        </div>
+    </header>
+        <!-- <div class="row">
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between px-md-1">
+                            <div class="align-self-center">
+                            
+                            </div>
+                            <div class="text-end">
+                                <h3><%= client.guilds.cache.size %></h3>
+                                <p class="mb-0">Servers</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between px-md-1">
+                            <div class="align-self-center">
+                            
+                            </div>
+                            <div class="text-end">
+                                <h3><%= Array.from(client.guilds.cache.values()).reduce((p, c) => c.memberCount + p, 0) %></h3>
+                                <p class="mb-0">Users</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+    <main style="margin-top: 2%;">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-4 col-xl-3 col-12 my-2">
+                    <div class="card shadow">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between px-md-1">
+                                <div class="align-self-center">
+                                
+                                </div>
+                                <div class="text-end">
+                                    <h3><%= client.guilds.cache.size %></h3>
+                                    <p class="mb-0">Servers</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 col-xl-3 col-12 my-2">
+                    <div class="card shadow">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between px-md-1">
+                                <div class="align-self-center">
+                            
+                                </div>
+                                <div class="text-end">
+                                    <h3><%= Array.from(client.guilds.cache.values()).reduce((p, c) => c.memberCount + p, 0) %></h3>
+                                    <p class="mb-0">Users</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 col-xl-3 col-12 my-2">
+                    <div class="card shadow">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between px-md-1">
+                                <div class="align-self-center">
+                            
+                                </div>
+                                <div class="text-end">
+                                    <h3><%= (exp.Process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2) %> MB</h3>
+                                    <p class="mb-0">Memory Usage</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
